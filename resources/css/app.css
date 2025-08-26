@@ -1,0 +1,260 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --color-verde-primario: #9c2b85;
+    --color-verde-escuro: #153238;
+    --color-fundo-escuro: #041518;
+    --color-cinza: #363941;
+    --color-branco: #E0DEDE;
+    --color-roxo: #997BDC;
+    --color-turquesa: #cf72bd;
+
+    --color-primaria-50: #EAFBD7;
+    --color-primaria-100: #E0F9C3;
+    --color-primaria-200: #D6F8AF;
+    --color-primaria-300: #CBF69B;
+    --color-primaria-400: #C1F487;
+    --color-primaria-500: #9c2b85; /* Esse é o verde amarelado principal */
+    --color-primaria-600: #9FEE44;
+    --color-primaria-700: #87E916;
+    --color-primaria-800: #6CBB11;
+    --color-primaria-900: #518C0D;
+
+    --color-secundaria-50: #E6FAFF;
+    --color-secundaria-100: #D6F6FF;
+    --color-secundaria-200: #BDF1FE;
+    --color-secundaria-300: #A4ECFE;
+    --color-secundaria-400: #8CE7FE; /* Esse é o turquesa principal */
+    --color-secundaria-500: #53DBFD;
+    --color-secundaria-600: #1CD0FD;
+    --color-secundaria-700: #02B2DE;
+    --color-secundaria-800: #0286A7;
+    --color-secundaria-900: #01596F;
+
+    --color-terciaria-50: #DBD0F2;
+    --color-terciaria-100: #CCBDED;
+    --color-terciaria-200: #BDAAE8;
+    --color-terciaria-300: #AF97E3;
+    --color-terciaria-400: #A084DE;
+    --color-terciaria-500: #997BDC; /* Esse é o roxo principal */
+    --color-terciaria-600: #8A67D7;
+    --color-terciaria-700: #7B53D1;
+    --color-terciaria-800: #6033C1;
+    --color-terciaria-900: #4D299A;
+
+    --color-fundo-50: #C4EEF5;
+    --color-fundo-100: #89DCEB;
+    --color-fundo-200: #4DCBE1;
+    --color-fundo-300: #22AFC7;
+    --color-fundo-400: #1D95AA;
+    --color-fundo-500: #187B8C;
+    --color-fundo-600: #13616F;
+    --color-fundo-700: #0E4751;
+    --color-fundo-800: #092D33;
+    --color-fundo-900: #041518; /* Esse é o fundo principal */
+
+    --color-branco-50: #FAFAFA;
+    --color-branco-100: #F1F0F0;
+    --color-branco-200: #E8E7E7;
+    --color-branco-300: #E0DEDE;  /* Esse é o branco principal */
+    --color-branco-400: #CFCDCD;
+    --color-branco-500: #C0BCBC;
+    --color-branco-600: #B1ACAC;
+    --color-branco-700: #A19C9C;
+    --color-branco-800: #837B7B;
+    --color-branco-900: #625C5C;
+
+    --color-cinza-50: #E0E2E5;
+    --color-cinza-100: #C2C5CC;
+    --color-cinza-200: #A3A7B2;
+    --color-cinza-300: #858A99;
+    --color-cinza-400: #686E7D;
+    --color-cinza-500: #5C606E;
+    --color-cinza-600: #4F535F;
+    --color-cinza-700: #42464F;
+    --color-cinza-800: #363941; /* Esse é o cinza principal */
+    --color-cinza-900: #26282E;
+
+    --color-gunmetal-50: #D2E9EE;
+    --color-gunmetal-100: #A5D4DD;
+    --color-gunmetal-200: #78BECC;
+    --color-gunmetal-300: #4BA8BB;
+    --color-gunmetal-400: #378291;
+    --color-gunmetal-500: #2F6E7B;
+    --color-gunmetal-600: #265A64;
+    --color-gunmetal-700: #1E464E;
+    --color-gunmetal-800: #153238; /* Esse é o verde-escuro principal */
+    --color-gunmetal-900: #0F2428;
+
+}
+
+@theme inline {
+    --font-sans: Instrument Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar-background);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+@layer utilities {
+    body,
+    html {
+        --font-sans:
+            'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    }
+}
+
+:root {
+    --background: #E0DEDE;
+    --foreground: #041518;
+    --card: #FFFFFF;
+    --card-foreground: #041518;
+    --popover: #153238;
+    --popover-foreground: #E0DEDE;
+    --primary: #153238;
+    --primary-foreground: #FFFFFF;
+    --secondary: #9c2b85;
+    --secondary-foreground: #041518;
+    --muted: #F4F4F4;
+    --muted-foreground: #363941;
+    --accent: #265A64;
+    --accent-foreground: #E0DEDE;
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: #FFFFFF;
+    --border: #D1D1D1;
+    --input: #FFFFFF;
+    --ring: #153238;
+    --chart-1: #9c2b85;
+    --chart-2: #8CE7FE;
+    --chart-3: #997BDC;
+    --chart-4: #153238;
+    --chart-5: #363941;
+    --radius: 0.5rem;
+    --sidebar-background: #FFFFFF;
+    --sidebar-foreground: #041518;
+    --sidebar-primary: #153238;
+    --sidebar-primary-foreground: #FFFFFF;
+    --sidebar-accent: #9c2b85;
+    --sidebar-accent-foreground: #041518;
+    --sidebar-border: #D1D1D1;
+    --sidebar-ring: #153238;
+    --sidebar: #FFFFFF;
+    --tooltip: #153238;
+    --tooltip-foreground: #E0DEDE;
+}
+
+.dark {
+    --background: #041518;
+    --foreground: #E0DEDE;
+    --card: #363941;
+    --card-foreground: #E0DEDE;
+    --popover: #153238;
+    --popover-foreground: #E0DEDE;
+    --primary: #9c2b85;
+    --primary-foreground: #041518;
+    --secondary: #153238;
+    --secondary-foreground: #E0DEDE;
+    --muted: #153238;
+    --muted-foreground: #E0DEDE;
+    --accent: #1E464E;
+    --accent-foreground: #E0DEDE;
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: #E0DEDE;
+    --border: #363941;
+    --input: #363941;
+    --ring: #9c2b85;
+    --chart-1: #9c2b85;
+    --chart-2: #8CE7FE;
+    --chart-3: #997BDC;
+    --chart-4: #153238;
+    --chart-5: #363941;
+    --radius: 0.5rem;
+    --sidebar-background: #041518;
+    --sidebar-foreground: #E0DEDE;
+    --sidebar-primary: #9c2b85;
+    --sidebar-primary-foreground: #041518;
+    --sidebar-accent: #153238;
+    --sidebar-accent-foreground: #E0DEDE;
+    --sidebar-border: #363941;
+    --sidebar-ring: #9c2b85;
+    --sidebar: #041518;
+    --tooltip: #153238;
+    --tooltip-foreground: #E0DEDE;
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
